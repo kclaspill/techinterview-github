@@ -1,3 +1,21 @@
+Instructions:
+1. Download this repository
+2. Extract the .zip using your favorite file manager
+3. Either:
+	- To use with Firefox or any desktop browser: Navigate to where you extracted the files and open event_dashboard.html
+	 - To use with Google Chrome: Open your browser and manually enter the file location ex.: 
+	file:///storage/emulated/0/techinterview-github/event_dashboard.html
+4. Enjoy!
+
+Other Information:
+- Platform: HTML/CSS/JS
+- Frameworks used: jQuery, jQuery Mobile
+
+- Plugin used: jQuery Scrollz for refresh on pull-down
+- Note: jQuery Scrollz causes strange mouse behavior on desktop (Mouse functionality only tested on Windows desktop)
+
+- Site tested on: Samsung Galaxy Tab 3, Samsung Galaxy S5, iPhone 5, Windows tablet, Windows desktop, Google Nexus 6
+
 # Technical Interview Homework: GitHub Dashboard
 
 
