@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+	<!--
+    GitHub Public Events Dashboard
+    Copyright (c) 2017 Kelsey Claspill
+	
+    Filename:	event_dashboard.html
+    Linked files: event_dashboard.js, jquery-2.1.4-min.js,  jquery.mobile-1.4.5.min.js,
+				  js/jquery.scrollz.js
+
+   -->
+	<meta charset="utf-8"/>
+	<title>GitHub Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery.scrollz.js"></script>
+	<script src="js/event_dashboard.js"></script>
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="jquery.scrollz.css">
+</head>	
+
+<body onload="loaded()">
+
+	<!-- Start of main page -->
+	<div data-role='page' id='main' data-theme="b">
+		<!--Header-->
+		<div data-role='header'>
+			<h1>Public Events Dashboard</h1>
+			<!-- Popup form for sign in -->
+			<a href="#popupLogin"  data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-right ui-btn-a" data-transition="pop">View My Events</a>
+			<div data-role="popup" id="popupLogin" data-theme="b" class="ui-corner-all">
+				<form id="login">
+					<div style="padding:10px 20px;">
+						<h3>Sign in to view your events</h3>
+						<label for="un" class="ui-hidden-accessible">Username:</label>
+						<input name="user" id="un" value="" placeholder="username" data-theme="b" type="text">
+						<label for="pw" class="ui-hidden-accessible">Password:</label>
+						<input name="pass" id="pw" value="" placeholder="password" data-theme="b" type="password">
+						<button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" data-theme="b">Sign in</button>
+					</div>
+				</form>
+			</div> 
+		</div> <!--End Header-->
+		
+		<button class='ui-btn ui-corner-all ui-btn-icon-left ui-icon-refresh' onclick = "refreshFeed()">Refresh Feed</button>
+		<!--Div that allows pull-to-refresh, contains listview to be filled with public events-->
+		<div data-role='content' id='ui-content' data-scrollz="pull">
+			<ul data-role="listview" data-ajax="false" data-inset="false" class='feed'>
+			</ul>
+		</div>
+	</div> <!--End main page-->
+	
+	<!-- Start of details page -->
+	<div data-role='page' id="details" data-theme="b">
+		<!--Header-->
+		<div data-role='header' data-add-back-btn="true">
+			<h1>Event Details</h1>
+		</div><!--End Header-->
+		<!--Div to contain event details-->
+		<div data-role='content' id='ui-content'>
+			<ul data-role="listview" data-ajax="false" data-inset="false" class='detailLine'>
+			</ul>
+			<div class='button-holder'>
+			</div>
+		</div>
+	</div> <!--End details page-->
+	
+	<!-- Start of user's page -->
+	<div data-role='page'  id="myEvents" data-theme="b">
+	<!--Header-->
+		<div data-role='header' data-add-back-btn="true">
+			<h1>My Events</h1>
+		</div> <!--End Header-->
+		<!--Div to contain user's event feed-->
+		<div data-role ='content' id='ui-content'>
+			<p id='userDetail'></p>
+			<ul data-role="listview" data-ajax="false" data-inset="false" class='myFeed'>
+			</ul>
+		</div>
+	</div>
+	
+
+	
+</body>
+
+</html> 
